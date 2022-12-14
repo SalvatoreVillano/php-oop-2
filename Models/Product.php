@@ -2,16 +2,22 @@
 require_once 'Category.php';
 class Product
 {
-    public $name;
-    public $price;
-    public $quantity;
+    public string $name;
+    public float $price;
+    public int $quantity;
+    public $category;
 
-    public function __construct($_name, $_price, $_quantity)
+    public string $img;
+
+
+
+    public function __construct(string $_name, float $_price, int $_quantity, Category $_category, string $_img)
     {
         $this->name = $_name;
         $this->price = $_price;
         $this->quantity = $_quantity;
-
+        $this->category = $_category;
+        $this->img = $_img;
     }
 
 }

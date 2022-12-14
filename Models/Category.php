@@ -2,9 +2,8 @@
 
 class Category
 {
-    public $type;
-
-    public function __construct($_type)
+    public string $type;
+    public function __construct(string $_type)
     {
         $this->type = $_type;
     }
