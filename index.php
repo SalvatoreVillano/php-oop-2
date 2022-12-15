@@ -6,8 +6,8 @@ require_once __DIR__ . './Models/Kennel.php';
 require_once __DIR__ . './Models/Category.php';
 
 
-$food1 = new Food('Bocconcini con pollo', 3.50, 8, new Category("Gatto"), "https://www.spesasprint.it/img/prodotti/big/57165.jpg?v=2", 4.25, "Pollo");
-$food2 = new Food('Crocchette di manzo', 18, 4, new Category("Cane"), "https://www.damoreno.ch/media/catalog/product/cache/5b5d7988e9af9f38308c6dd6deb78357/3/0/3010470154476_1ntfebazhkbzboao.jpg", 18, "Manzo");
+$food1 = new Food('Bocconcini con pollo', 3.50, 8, new Category("Gatto"), "https://www.spesasprint.it/img/prodotti/big/57165.jpg?v=2", "Pollo");
+$food2 = new Food('Crocchette di manzo', 18, 4, new Category("Cane"), "https://www.damoreno.ch/media/catalog/product/cache/5b5d7988e9af9f38308c6dd6deb78357/3/0/3010470154476_1ntfebazhkbzboao.jpg", "Manzo");
 $toy1 = new Toys('Pallina rimbalzante', 5.20, 11, new Category("Cane"), "https://ae01.alicdn.com/kf/H29af1bcda7c148a3ae3b88cf5505ccc8h/Accendi-palline-per-cani-lampeggiante-palla-elastica-LED-palla-molare-palla-incandescente-Pet-colore-luce-palla.jpg_Q90.jpg_.webp", "Plastica");
 $toy2 = new Toys('Tiragraffi', 22.50, 2, new Category("Gatto"), "https://www.agrizoo2.it/wp-content/uploads/2022/05/48534_2.png", "Sisal");
 $kennel1 = new Kennel('Cuccia avvolgente', 13.80, 6, new Category('Gatto'), 'https://m.media-amazon.com/images/I/51ARMnCOFmL._SL500_.jpg', 'Grigio Chiaro');
@@ -15,7 +15,8 @@ $kennel2 = new Kennel('Cuccia luxury', 29, 1, new Category('Cane'), 'https://www
 $product = [];
 array_push($product, $food1, $food2, $toy1, $toy2, $kennel1, $kennel2);
 
-// var_dump($food1);
+$food1->setWeight(3);
+$food2->setWeight(18);
 ?>
 
 <body>
@@ -37,6 +38,10 @@ array_push($product, $food1, $food2, $toy1, $toy2, $kennel1, $kennel2);
                     <p class="card-text">
                         Quantità:
                         <?php echo $obj->quantity ?> rimanenti
+                    </p>
+                    <p class="card-text">
+                        Peso:
+                        <?php echo $obj->getWeight() ?> kg
                     </p>
                     <p class="card-text">
                         Tipo:

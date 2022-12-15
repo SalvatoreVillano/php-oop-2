@@ -1,7 +1,10 @@
 <?php
 require_once 'Category.php';
+require_once 'Weight.php';
+
 class Product
 {
+    use Weight;
     public string $name;
     public float $price;
     public int $quantity;
