@@ -4,6 +4,8 @@ require_once __DIR__ . './Models/Food.php';
 require_once __DIR__ . './Models/Toys.php';
 require_once __DIR__ . './Models/Kennel.php';
 require_once __DIR__ . './Models/Category.php';
+include __DIR__ . './Exception.php';
+
 
 
 $food1 = new Food('Bocconcini con pollo', 3.50, 8, new Category("Gatto"), "https://www.spesasprint.it/img/prodotti/big/57165.jpg?v=2", "Pollo");
@@ -57,4 +59,12 @@ $food2->setWeight(18);
         <?php } ?>
     </div>
 </div>
+
+<?php 
+        try {
+            echo multiplication('ciao');
+            } catch (Exception $e) {
+            echo 'Eccezione: ' . $e->getMessage();
+                                } ?>
+
 </body>
